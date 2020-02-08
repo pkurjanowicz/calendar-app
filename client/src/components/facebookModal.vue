@@ -73,7 +73,8 @@ export default {
                             axios.post('/newevent', { owner_id: this.userID, event_name: this.facebookTitle, event_details: this.facebookDescription, event_start_time: this.fbStartDate, event_end_time: this.fbEndDate, all_day: false, drag: false})
 
                             .then(() => {
-                                this.getEvents()
+                                this.eventsList()
+                                this.close()
                             });
                         }
                     }

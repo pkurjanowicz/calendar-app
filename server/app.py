@@ -6,15 +6,11 @@ from db_instance import db
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
 
-
-"""
-Code below is Mac specific and must be included for all Mac users
-
 project_paths = project_dir.split("/")
 project_paths.pop()
 project_paths.append('db')
 project_dir = "/".join(project_paths)
-"""
+
 
 
 def create_app():
@@ -22,7 +18,7 @@ def create_app():
         static_folder = "./dist/static",
         template_folder = "./dist"
     )
-    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///{}".format(os.path.join(project_dir, "userdata.db"))
+    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://{user}:{pw}@{url}/{db}".format(user=os.environ["DB_USER"],pw=os.environ["DB_PASS"],url=os.environ["DB_URL"],db=os.environ["DB_NAME"])
     app.config['SQLALCHEMY_ECHO'] = True
     db.init_app(app)
     app.register_blueprint(user_api)

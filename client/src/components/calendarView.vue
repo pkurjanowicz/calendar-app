@@ -78,7 +78,7 @@ export default {
       resizeEventID: '',
       resizeStart:'',
       resizeEnd: '',
-      facebook: false
+      facebook: false,
       resizeName: '',
       
     }

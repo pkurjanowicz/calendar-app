@@ -36,7 +36,7 @@
                     
                     <p>Invite Groups:</p>
                     <select  name = "groupList" v-model="selectedGroup" v-on:change="submitGroupEmails">
-                        <option  v-for="(item, key) in groupInfo" :value="item">{{ key }} - {{ item }}</option>
+                        <option  v-for="(item, key) in groupInfo" :value="item" :key='key'>{{ key }} - {{ item }}</option>
                     </select>
                     <!--
                     perhaps value is in a form accessible in Python, and an SQL query can
@@ -162,7 +162,7 @@ export default {
             axios.post('/sendinvites', {
                 
                 emails: this.emails,//add emails here
-                event_id: this.currentEventId
+                event_id: this.currentEventId,
                 emails: this.emails,
                 event_id: this.currentEventId,
                 custom_message: this.custom_message,
