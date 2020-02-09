@@ -1,4 +1,5 @@
-from app import create_app, setup_database
+from app import create_app 
+# from app import setup_database
 from flask import Flask, render_template, session
 
 
@@ -19,5 +20,5 @@ def add_vue_routes(app):
 if __name__ == '__main__':
     app = create_app()
     add_vue_routes(app)
-    setup_database(app)
+    # setup_database(app)
     app.run(debug=True)

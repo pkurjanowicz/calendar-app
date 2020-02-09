@@ -18,8 +18,8 @@ def create_app():
         static_folder = "./dist/static",
         template_folder = "./dist"
     )
-    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://{user}:{pw}@{url}/{db}".format(user=os.environ["DB_USER"],pw=os.environ["DB_PASS"],url=os.environ["DB_URL"],db=os.environ["DB_NAME"])
-    app.config['SQLALCHEMY_ECHO'] = True
+    # app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://{user}:{pw}@{url}/{db}".format(user=os.environ["DB_USER"],pw=os.environ["DB_PASS"],url=os.environ["DB_URL"],db=os.environ["DB_NAME"])
+    # app.config['SQLALCHEMY_ECHO'] = True
     db.init_app(app)
     app.register_blueprint(user_api)
     app.register_blueprint(email_api)
@@ -27,7 +27,7 @@ def create_app():
 
     return app
 
-def setup_database(app):
-    with app.app_context():
-        db.create_all()
+# def setup_database(app):
+#     with app.app_context():
+#         db.create_all()
         # db.drop_all()
