@@ -19,7 +19,7 @@
     "ical": "^0.6.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^8.0.0",
     "vue": "^2.6.10",
     "vue-tag": "^1.0.0",
